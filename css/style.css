@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+*{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+    background-color: #f8f9fa; /* Warna dasar yang soft */
+}
+        /* Utk transisi halaman nanti */
+.page-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #000;
+    z-index: 9999;
+    transform: translateY(-100%);
+}
+
+@keyframes slow-spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .logo-footer {
+        /* Kita buat posisinya absolut ke kanan agar tidak merusak layout flex kiri */
+        position: absolute;
+        right: -10rem;
+        top: 50%;
+        transform: translateY(-50%);
+        animation: slow-spin 75s linear infinite;
+        pointer-events: none;
+    }
+
+    /* Tambahkan filter noise jika belum ada di style.css */
+    .bg-grain {
+        background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    }
+
+
+@keyframes blob {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { 
+        transform: translateX(100%); 
+        opacity: 0; 
+        filter: blur(10px);
+    }
+    to { 
+        transform: translateX(0); 
+        opacity: 1; 
+        filter: blur(0);
+    }
+}
+
+#hero-title {
+    animation: slideUp 1s ease-out forwards;
+}
+
+#hero-sub {
+    animation: fadeIn 1.5s ease-out 0.5s forwards;
+}
+
+#hero-btn {
+    animation: fadeIn 1.5s ease-out 0.8s forwards;
+}
