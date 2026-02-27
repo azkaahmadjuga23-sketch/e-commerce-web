@@ -9,7 +9,6 @@ if (!isset($_SESSION['login'])) {
 
 $user_id = $_SESSION['user_id'];
 
-// Logika Update Qty
 if (isset($_POST['update_qty'])) {
     $cart_id = $_POST['cart_id'];
     $new_qty = (int)$_POST['quantity'];
@@ -18,7 +17,6 @@ if (isset($_POST['update_qty'])) {
     }
 }
 
-// Ambil data produk di keranjang
 $result = mysqli_query($conn, "SELECT cart.*, products.name, products.price, products.image, products.description
                                FROM cart 
                                JOIN products ON cart.product_id = products.id 

@@ -1,5 +1,5 @@
 <?php
-include '../config/database.php'; // Pastikan path ke database benar
+include '../config/database.php';
 session_start();
 
 $error = "";

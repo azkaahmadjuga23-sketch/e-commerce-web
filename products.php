@@ -2,7 +2,6 @@
 include 'config/database.php';
 session_start();
 
-// Logic: Ambil semua produk
 $result = mysqli_query($conn, "SELECT * FROM products ORDER BY id DESC");
 
 include 'components/header.php';

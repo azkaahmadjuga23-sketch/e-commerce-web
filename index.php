@@ -1,8 +1,7 @@
 <?php 
-include 'config/database.php'; // Pastikan path-nya benar
+include 'config/database.php'; 
 include 'components/header.php';
 
-// Ambil data produk terbaru/best seller (Limit 3 sesuai grid kamu)
 $query = "SELECT * FROM products ORDER BY id DESC LIMIT 3";
 $result = mysqli_query($conn, $query);
 ?>
