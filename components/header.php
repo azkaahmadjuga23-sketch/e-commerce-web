@@ -29,7 +29,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <span class="ml-2">SakuMarket</span>
         </a>
 
-        <div class="hidden md:flex items-center space-x-8 text-[14px] tracking-widest font-medium uppercase">
+        <div class="hidden md:flex items-center space-x-8 text-[14p.3x] tracking-widest font-medium">
             <a href="index.php" class="hover:opacity-50 transition">Home</a>
             <a href="products.php" class="hover:opacity-50 transition">Collections</a>
             
