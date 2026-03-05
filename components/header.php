@@ -29,7 +29,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <span class="ml-2">SakuMarket</span>
         </a>
 
-        <div class="hidden md:flex items-center space-x-8 text-[14p.3x] tracking-widest font-medium">
+        <div class="hidden md:flex items-center space-x-8 text-[15px] tracking-widest font-medium">
             <a href="index.php" class="hover:opacity-50 transition">Home</a>
             <a href="products.php" class="hover:opacity-50 transition">Collections</a>
             
@@ -64,13 +64,30 @@ if (session_status() === PHP_SESSION_NONE) {
 </div>
 
 <?php if (isset($_GET['status']) && $_GET['status'] == 'added'): ?>
+    <div id="toast-success" class="fixed top-10 right-10 z-[100] bg-black text-white px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-4 border border-white/10 animate-[slideInRight_0.5s_cubic-bezier(0.16,1,0.3,1)]">
+        <div class="flex items-center justify-center w-6 h-6 bg-white/10 rounded-full">
+            <i class="bi bi-check2 text-white text-sm"></i>
+        </div>
+        <div class="flex flex-col">
+            <span class="text-[10px] font-black uppercase tracking-[0.2em]">Success</span>
+            <span class="text-[10px] text-gray-400 uppercase tracking-widest">Added to collection</span>
+        </div>
+    </div>
 
-<div id="toast-success" class="fixed top-10 right-10 z-[100] bg-black text-white px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-4 animate-[slideInRight_0.5s_cubic-bezier(0.16,1,0.3,1)] border border-white/10">
-
-<div class="flex items-center justify-center w-6 h-6 bg-white/10 rounded-full">
-
-<i class="bi bi-check2 text-white text-sm"></i>
-<?php endif ?>
+    <script>
+        setTimeout(() => {
+            const toast = document.getElementById('toast-success');
+            if(toast) {
+                toast.style.animation = 'none'; 
+                toast.style.transition = 'all 0.6s cubic-bezier(0.16,1,0.3,1)';
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(40px) scale(0.95)';
+                toast.style.filter = 'blur(10px)';
+                setTimeout(() => toast.remove(), 600);
+            }
+        }, 2500);
+    </script>
+<?php endif; ?>
 
 <script>
     const menuBtn = document.getElementById('menu-btn');
@@ -79,19 +96,13 @@ if (session_status() === PHP_SESSION_NONE) {
     const body = document.body;
 
     menuBtn.addEventListener('click', () => {
-        // Toggle Menu Position
         mobileMenu.classList.toggle('translate-x-0');
         mobileMenu.classList.toggle('translate-x-full');
-
-        // Toggle Icon
         menuIcon.classList.toggle('bi-list');
         menuIcon.classList.toggle('bi-x-lg');
-
-        // Prevent Scroll when menu open
         body.classList.toggle('overflow-hidden');
     });
 
-    // Close menu when clicking links
     const mobileLinks = mobileMenu.querySelectorAll('a');
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -104,7 +115,10 @@ if (session_status() === PHP_SESSION_NONE) {
 </script>
 
 <style>
-    /* Tambahan style untuk efek teks di mobile menu */
+    @keyframes slideInRight {
+        from { transform: translateX(100%); opacity: 0; filter: blur(10px); }
+        to { transform: translateX(0); opacity: 1; filter: blur(0); }
+    }
     #mobile-menu a {
         position: relative;
         transition: transform 0.3s ease;
