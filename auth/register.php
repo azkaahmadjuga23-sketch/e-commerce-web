@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include '../config/database.php';
 session_start();
 
@@ -36,7 +40,8 @@ if (isset($_POST['register'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,800;1,200;1,800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        html{overflow: scroll;}
+        body { font-family: 'Plus Jakarta Sans', sans-serif;}
         .bg-grain { background-image: url("https://grainy-gradients.vercel.app/noise.svg"); }
     </style>
 </head>

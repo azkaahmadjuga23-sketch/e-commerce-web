@@ -35,7 +35,8 @@ if (isset($_POST['login'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,800;1,200;1,800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        html {overflow: scroll;}
+        body { font-family: 'Plus Jakarta Sans', sans-serif;}
         .bg-grain { background-image: url("https://grainy-gradients.vercel.app/noise.svg"); }
     </style>
 </head>
