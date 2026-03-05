@@ -70,6 +70,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <div class="flex items-center justify-center w-6 h-6 bg-white/10 rounded-full">
 
 <i class="bi bi-check2 text-white text-sm"></i>
+<?php endif ?>
 
 <script>
     const menuBtn = document.getElementById('menu-btn');
