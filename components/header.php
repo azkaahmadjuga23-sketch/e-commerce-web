@@ -63,6 +63,14 @@ if (session_status() === PHP_SESSION_NONE) {
     </p>
 </div>
 
+<?php if (isset($_GET['status']) && $_GET['status'] == 'added'): ?>
+
+<div id="toast-success" class="fixed top-10 right-10 z-[100] bg-black text-white px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-4 animate-[slideInRight_0.5s_cubic-bezier(0.16,1,0.3,1)] border border-white/10">
+
+<div class="flex items-center justify-center w-6 h-6 bg-white/10 rounded-full">
+
+<i class="bi bi-check2 text-white text-sm"></i>
+
 <script>
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
