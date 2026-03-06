@@ -1,4 +1,4 @@
-<footer class="bg-black text-white pb-12 rounded-t-[37px]  mt-20 relative overflow-hidden h-[74vh] group">
+<footer class="bg-black text-white pb-12 rounded-t-[37px]  mt-20 relative overflow-hidden h-[68vh] group">
     <div class="absolute inset-0 opacity-[0.05] bg-grain pointer-events-none"></div>
     
     <div class="relative z-10 h-full flex items-center justify-between px-16 md:px-24">
